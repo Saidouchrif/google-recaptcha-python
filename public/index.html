@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TP reCAPTCHA v2 — FastAPI</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <div class="card">
+    <h1>Formulaire sécurisé</h1>
+
+    <form id="contactForm" method="POST" action="/verify">
+      <label>Adresse email</label>
+      <input type="email" name="email" placeholder="you@example.com" required/>
+
+      <label>Message</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <p class="note">
+      * Exemple pédagogique — la validation reCAPTCHA s’effectue côté serveur FastAPI.
+    </p>
+  </div>
+</body>
+</html>
